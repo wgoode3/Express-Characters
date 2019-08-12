@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Characters
+    body
+        table(border=1)
+            tr
+                th Name
+                th Race
+                th Class
+                th Level
+                th Actions
+            each char in chars
+                tr
+                    td= char.name
+                    td= char.race
+                    td= char.class
+                    td= char.level
+                    td
+                        a(href='/remove/' + char._id) 
+                            button &times;
+
+        fieldset
+            legend Character Creator
+            form(action="/char" method="post")
+                p Name:&nbsp;
+                    input(type="text" name="name")
+                p Race:&nbsp;
+                    select(name="race")
+                        option Orc
+                        option Elf
+                        option Dwarves
+                        option Human
+                        option Halflings
+                p Class:&nbsp;
+                    select(name="class")
+                        option Warrior
+                        option Archer
+                        option Sorceror
+                        option Rogue
+                p Level:&nbsp;
+                    input(type="number" name="level" min=0, max=60)
+                button(type="submit") Create
