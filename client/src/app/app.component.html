@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+
+<table border=1>
+  <tr>
+    <th>Name</th>
+    <th>Race</th>
+    <th>Class</th>
+    <th>Level</th>
+  </tr>
+  <tr *ngFor="let character of characters">
+    <td>{{ character.name }}</td>
+    <td>{{ character.race }}</td>
+    <td>{{ character.class }}</td>
+    <td>{{ character.level }}</td>
+  </tr>
+</table>
